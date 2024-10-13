@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Sohan's Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/23fdf0a18e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    *{
+        font-family: 'Montserrat',sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+}
+body{
+    background-color: black;
+}
+
+.nav-links{
+        display: flex;
+        align-items: center;
+        background:  black;
+        padding: 20px 15px;
+        /* border-radius: 12px; */
+        /* box-shadow: 0 5px 10px rgba(0,0,0,0.2); */
+        height: 70px;
+}
+.nav-links li{
+        list-style: none;
+        margin: 0 12px;
+}
+.nav-links li a{
+        position: relative;
+        color: white;
+        font-size: 17px;
+        font-weight: 300;
+        padding: 6px 0;
+        text-decoration: none;
+}
+@media (min-width:940px) {
+    .navbar-collapse{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.nav-links li a:before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: white;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+}
+
+@media (max-width:940px) {
+    .nav-links{
+        height: fit-content;
+    } 
+}
+.nav-links li a:hover:before{
+        width: 100%;
+}
+.nav-links li.center a:before{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-links li.upward a:before{
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+.nav-links li.upward a:hover:before{
+  bottom: 0px;
+  opacity: 1;
+}
+.nav-links li.forward a:before{
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+.nav-links li.forward a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.banner{
+  margin-top: 70px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.banner-left{
+  margin-left: 100px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.services{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skills{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.works{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width:940px){
+    .work-img{
+      width: 45%;
+    }
+}
+.contact{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact input{
+  width: 30%;
+  height: 30px;
+}
+.contact textarea{
+  width: 30%;
+  height: 60px;
+}
+.contact button{
+  width: 10%;
+  height: 45px;
+  border-radius: 2em;
+  background-color: rgb(122, 223, 237);
+  color: black;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+@media  (max-width:740px){
+  .contact input{
+    width: 70%;
+  }
+  .contact textarea{
+    width: 70%;
+  }
+  .contact button{
+    width: 40%;
+  }
+}
+.social-media a{
+  text-decoration: none;
+  color: white;
+}
+nav{
+    background: transparent;
+    /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); */
+  }
+  nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav li{
+    height: 50px;
+  }
+  nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  nav a:hover{
+    background-color: #f0f0f0;
+    color: black;
+  }
+  nav li:first-child{
+    margin-right: auto;
+  }
+  .sidebar{
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(106, 106, 106, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 100;
+  }
+  .menu-close{
+    padding-left: 65%;
+  }
+  .sidebar li{
+    width: 100%;
+  }
+  .sidebar a{
+    width: 100%;
+  }
+  .menu-button{
+    display: none;
+  }
+  @media(max-width: 800px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+    
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 70%;
+    }
+  }
+</style>
+<body>
+  <nav>
+    <ul class="sidebar">
+      <li class="menu-close" onclick=hideSidebar()><a href="#"><i style="color: black;" class="fa-solid fa-xmark"></i></a></li>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#works">WORK</a></li>
+      <li><a href="#contact">CONTACT ME</a></li>
+    </ul>
+    <ul>
+      <li><a href="#" style="font-family: Sofia; font-size: 24px;">Portfolio</a></li>
+      <li class="hideOnMobile"><a href="#">HOME</a></li>
+      <li class="hideOnMobile"><a href="#services">SERVICES</a></li>
+      <li class="hideOnMobile"><a href="#works">WORK</a></li>
+      <li class="hideOnMobile"><a href="#contact">CONTACT ME</a></li>
+      <li class="menu-button" onclick=showSidebar()><a href="#"><i style="color: white;" class="fa-solid fa-bars"></i></a></li>
+    </ul>
+  </nav> <br> <br> 
+      <div class="title container">
+        <div style="text-align: center;">
+         <h1 style="font-family: Sofia;">Hello,</h1><br>
+         <h1 style="font-size: 50px;">I'm  G Sohan <strong >Naik</strong></h1>
+         <!-- <h1>&</h1> --> <br>
+          <div style="text-align: left;">
+         <h1> a web <strong >Developer</strong></h1>
+         <h1> & a graphic <strong >Designer</strong></h1></div>
+        </div>
+      </div> <br> <br> <br>
+      <div class="services container" id="services">
+        <span style="font-family: Sofia; font-size: 30px; border-bottom: 5px solid white; padding-bottom: 8px;">My Services</span> <br> <br> 
+        <div style=" display: flex; flex-wrap: wrap; justify-content: center;">
+        <div style="margin: 20px;">
+            <i class="fa-brands fa-chrome fa-4x"></i> <br><br>
+            WEB DESIGN
+        </div>
+        <div style="margin: 20px;">
+            <i class="fa-solid fa-pen-nib fa-4x"></i> <br><br>
+            GRAPHIC DESIGN
+        </div></div>
+      </div> <br> <br>
+      <div class="skills container" >
+        <span style="font-family: Sofia; font-size: 30px; border-bottom: 5px solid white; padding-bottom: 8px;">My Skills</span> <br> <br> 
+        <div style=" display: flex; flex-wrap: wrap; justify-content: space-around; width: 100%; margin-left: 15px;" class="skill-icons">
+        <div style="margin: 20px;">
+            <i class="fa-brands fa-html5 fa-4x"></i> <br><br>
+            HTML
+        </div>
+        <div style="margin: 20px;">
+            <i class="fa-brands fa-js fa-4x"></i><br><br>
+            CSS
+        </div>
+        <div style="margin: 20px;">
+            <i class="fa-brands fa-css3-alt fa-4x"></i><br><br>
+            JAVASCRIPT
+        </div>
+        <div style="margin: 20px;">
+            <i class="fa-brands fa-python fa-4x"></i><br><br>
+            DJANGO
+        </div>
+        <div style="margin: 20px;">
+            <i class="fa-brands fa-figma fa-4x"></i><br><br>
+            FIGMA
+        </div>
+    
+    </div>
+      </div> <br> <br>
+      <div class="contact" id="contact">
+        <span style="font-family: Sofia; font-size: 40px; border-bottom: 5px solid white; padding-bottom: 8px;">Contact Me</span> <br> <br> 
+        <div class="contact-content" style="width: 100%;">
+          
+          <form method="POST">
+            <input type="text" name="name" id="name" placeholder="Enter Your Name"> <br> <br>
+            
+            <input type="email" name="email" id="email" placeholder="Enter Your E-Mail"> <br> <br>
+          
+            <input type="text" name="address" id="address" placeholder="Enter Your Address"> <br> <br>
+            
+            <textarea type="text" name="message" id="message" placeholder="Enter Your Message"></textarea> <br> <br>
+            <button type="submit">Submit</button>
+          </form> <br> <br>
+          <div class="social-media">
+            <a href="https://www.instagram.com/_s0hann_/" target="_blank"><i class="fa-brands fa-instagram fa-2x" style="margin-right: 20px;margin-left: 20px;"></i></a>
+            <a href= "mailto:cse23001029@iiti.ac.in" target="_blank"><i class="fa-solid fa-envelope fa-2x" style="margin-right: 20px; margin-left: 20px;"></i></a>
+           <a href="https://www.github.com/SohanGugulothu/" target="_blank"> <i class="fa-brands fa-github fa-2x" style="margin-right: 20px; margin-left: 20px;"></i></a>
+          </div> 
+        </div>
+      </div> <br> <br> 
+      <script>
+         const sidebar = document.querySelector('.sidebar')
+        function showSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+          const sidebar = document.querySelector('.sidebar')
+          sidebar.style.display = 'none'
+        }
+        
+      </script>
+    </body>
+</html>
